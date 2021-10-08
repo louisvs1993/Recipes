@@ -1,19 +1,21 @@
 // our-domain.com/recipes
 import RecipeList from "../../components/recipes/RecipeList";
+import Prismic from "@prismicio/client";
 
 function RecipesPage(props) {
   return <RecipeList recipes={props.recipes} />;
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
-    "https://recipesvansteelantlouis.prismic.io/api/v2/documents/search?ref=YV8KKREAACsAcNWD#format=json"
-  );
-  const data = await res.json();
+
+  const client = Prismic.client('https://vansteelantlouisrecipes.prismic.io/api/v2/', {})
+  const documents = await client.query();
+
+  // console.log(documents)
 
   return {
     props: {
-      recipes: data.results.map(recipe => ({
+      recipes: documents.results.map(recipe => ({
         title: recipe.data.title[0].text,
         key: recipe.id.toString(),
         id: recipe.id.toString(),
