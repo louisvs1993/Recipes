@@ -6,7 +6,7 @@ function RecipeItem(props) {
   const router = useRouter();
 
   function showDetailsHandler() {
-    router.push('/recipes/' + props.id);
+    router.push('/recipes/' + props.slug);
   }
 
   return (

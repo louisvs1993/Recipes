@@ -10,6 +10,7 @@ function RecipeList(props) {
           id={recipe.id}
           image={recipe.image}
           title={recipe.title}
+          slug={recipe.slug}
         />
       ))}
     </ul>

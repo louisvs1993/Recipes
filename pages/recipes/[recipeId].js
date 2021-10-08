@@ -1,6 +1,6 @@
 //import { useRouter } from 'next/router';
 import RecipeDetail from "../../components/recipes/RecipeDetail";
-
+import Prismic from "@prismicio/client";
 
 // our-domain.com/recipes/specific-recipes
 
@@ -21,8 +21,16 @@ function RecipeDetails() {
 }
 
 export async function getStaticPaths() {
+  const client = Prismic.client('https://vansteelantlouisrecipes.prismic.io/api/v2/', {})
+  const documents = await client.query();
+  const recipes = documents.results;
+
+
   return {
     fallback: false,
+    /*paths: recipes.map((recipe) => ({
+      params: {recipeId: recipe.slugs[0].toString()},
+    }))*/
     paths: [
       {
         params: {
@@ -46,7 +54,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // fetch data for a single meetup
 
-  const recipeId = context.params.recipeId;
+  const recipeId = context.params.slug;
 
   return {
     props: {
