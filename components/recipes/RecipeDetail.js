@@ -3,11 +3,6 @@ import RecipeItem from './RecipeItem';
 
 function RecipeDetail(props) {
 
-  props.instructions.forEach(element => {
-    console.log(element.step_title[0].text)
-  });
-
-
   return (
     <section className={classes.detail}>
       <img src={props.image} alt={props.title}></img>
