@@ -10,8 +10,9 @@ export async function getStaticProps() {
 
   const client = Prismic.client('https://vansteelantlouisrecipes.prismic.io/api/v2/', {})
   const documents = await client.query();
-
-  console.log(documents.results[0].slugs[0])
+  //const piz = await client.getByID(documents.results[0].id);
+  
+  //console.log(piz);
 
   return {
     props: {
@@ -20,7 +21,7 @@ export async function getStaticProps() {
         key: recipe.id.toString(),
         id: recipe.id.toString(),
         image: recipe.data.image.url,
-        slug: recipe.slugs[0]
+        uid: recipe.uid
       }))
     },
     // In case page needs to be updated regularly (in seconds)
