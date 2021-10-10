@@ -5,7 +5,6 @@ import Prismic from "@prismicio/client";
 
 
 function RecipeDetails(props) {
-  console.log(props.recipeData.data);
 
   return (
     <RecipeDetail
@@ -13,6 +12,9 @@ function RecipeDetails(props) {
       title={props.recipeData.data.title[0].text}
       time={props.recipeData.data.time}
       servings={props.recipeData.data.servings}
+      ingredientsTitle={props.recipeData.data.body[0].primary.items_title[0].text}
+      ingredients={props.recipeData.data.body[0].items}
+      instructions={props.recipeData.data.body[1].items}
     />
   );
 }
@@ -21,7 +23,6 @@ export async function getStaticPaths() {
   const client = Prismic.client('https://vansteelantlouisrecipes.prismic.io/api/v2/', {})
   const documents = await client.query();
   const recipes = documents.results;
-  //console.log(recipes[0].id);
 
 
   return {
