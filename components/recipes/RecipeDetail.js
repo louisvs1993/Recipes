@@ -20,14 +20,14 @@ function RecipeDetail(props) {
       <div className={classes.ingredients}>
         <h3>{props.ingredientsTitle}</h3>
         {props.ingredients.map((ingredient) => (
-          <p>{ingredient.item}</p>
+          <p key={ingredient.key}>{ingredient.item}</p>
         ))}
       </div>
       <hr />
       <div className={classes.instructions}>
         <h3>{props.instructionsTitle}</h3>
         {props.instructions.map((instruction) => (
-          <div>
+          <div key={instruction.key}>
             <h4>{instruction.step_title[0].text}</h4>
             <p>{instruction.description_of_step[0].text}</p>
           </div>
