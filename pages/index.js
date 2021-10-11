@@ -1,6 +1,6 @@
 import Prismic from "@prismicio/client";
 import classes from "../styles/Home.module.css";
-// our-domain.com/
+import Image from "next/image";
 
 function HomePage(props) {
   return (
@@ -10,7 +10,12 @@ function HomePage(props) {
         <p>{props.page.data.desciption[0].text}</p>
       </div>
       <div className={classes.columnRight}>
-        <img src={props.page.data.backgroundimage.url}></img>
+      <Image
+        src={props.page.data.backgroundimage.url}
+        alt="Food picture"
+        width={750}
+        height={1500}
+      />
       </div>
     </div>
   );
