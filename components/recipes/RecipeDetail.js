@@ -20,7 +20,7 @@ function RecipeDetail(props) {
       </div>
       <hr/>
       <div className={classes.instructions}>
-      <h3>Instructies</h3>
+      <h3>{props.instructionsTitle}</h3>
       {props.instructions.map((instruction) => (
         <div>
         <h4>{instruction.step_title[0].text}</h4>

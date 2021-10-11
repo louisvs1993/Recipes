@@ -14,6 +14,7 @@ function RecipeDetails(props) {
       servings={props.recipeData.data.servings}
       ingredientsTitle={props.recipeData.data.body[0].primary.items_title[0].text}
       ingredients={props.recipeData.data.body[0].items}
+      instructionsTitle={props.recipeData.data.body[1].primary.steps[0].text}
       instructions={props.recipeData.data.body[1].items}
     />
   );
