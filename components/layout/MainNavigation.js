@@ -5,7 +5,7 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Van Steelant Recipes</div>
+      <div className={classes.logo}>MOODFOOD</div>
       <nav>
       <ul>
           <li>

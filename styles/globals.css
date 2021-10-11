@@ -8,9 +8,22 @@
 body {
   font-family: 'Open Sans', 'Lato', sans-serif;
   margin: 0;
+  margin-top: 10vh !important;
 }
 
-h1,
+h1{
+  font-family: 'Cormorant Garamond', serif;
+  font-size:100px;
+  font-weight:lighter;
+}
+
+p{
+  color: #aaa;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+}
+
 h2,
 h3,
 h4,

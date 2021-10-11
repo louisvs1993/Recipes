@@ -21,7 +21,7 @@ function RecipeDetails(props) {
 
 export async function getStaticPaths() {
   const client = Prismic.client('https://vansteelantlouisrecipes.prismic.io/api/v2/', {})
-  const documents = await client.query();
+  const documents = await client.query(Prismic.Predicates.at('document.type', 'recipe'));
   const recipes = documents.results;
 
 

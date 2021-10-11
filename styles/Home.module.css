@@ -119,3 +119,29 @@
     flex-direction: column;
   }
 }
+
+
+.columnLeft {
+  float: left;
+  width: 50%;
+  height: 80vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.columnRight{
+  float: left;
+  width: 50%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+
+.column img {
+  display: block;
+  resize: none;
+  height: 80vh;
+  zoom:2;
+}

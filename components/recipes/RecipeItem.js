@@ -1,4 +1,4 @@
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Card from "../ui/Card";
 import classes from "./RecipeItem.module.css";
 
@@ -6,7 +6,7 @@ function RecipeItem(props) {
   const router = useRouter();
 
   function showDetailsHandler() {
-    router.push('/recipes/' + props.uid);
+    router.push("/recipes/" + props.uid);
   }
 
   return (
@@ -22,6 +22,7 @@ function RecipeItem(props) {
           <button onClick={showDetailsHandler}>Show Details</button>
         </div>
       </Card>
+
     </li>
   );
 }
