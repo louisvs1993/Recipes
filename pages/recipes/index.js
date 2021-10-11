@@ -10,10 +10,6 @@ export async function getStaticProps() {
 
   const client = Prismic.client('https://vansteelantlouisrecipes.prismic.io/api/v2/', {})
   const documents = await client.query(Prismic.Predicates.at('document.type', 'recipe'));
-  console.log(documents)
-  //const piz = await client.getByID(documents.results[0].id);
-  
-  //console.log(piz);
 
   return {
     props: {
